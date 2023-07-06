@@ -66,6 +66,18 @@ function promptCriteria() {
   }
 }
 
+function reset() {
+  passwordCatergories = [];
+  lengthCriteria = false;
+  characterTypesCriteria = false;
+  criteria = -1;
+  useLower = true;
+  useUpper = true;
+  useDigit = true;
+  useSpecial = true;
+  length = 0;
+}
+
 function generatePassword() {
   promptCriteria();
   var password = "";
