@@ -13,7 +13,6 @@ var useUpper = true;
 var useDigit = true;
 var useSpecial = true;
 var length = 0;
-
 function promptCriteria() {
   while(criteria != 1 && criteria != 2 && criteria != 3) {
     criteria = prompt("Which criteria should be included in the password? 1: Length of Password, 2: Character Types, 3: Both", length);
@@ -65,6 +64,23 @@ function promptCriteria() {
     ans = "";
     console.log(categories);
   }
+}
+
+function generatePassword() {
+  promptCriteria();
+  var password = "";
+  if(useLower) passwordCatergories.push(categories[0]);
+  if(useUpper) passwordCatergories.push(categories[1]);
+  if(useDigit) passwordCatergories.push(categories[2]);
+  if(useSpecial) passwordCatergories.push(categories[3]);
+  for (var i = 0; i < length; i++){
+    var passwordCatergory = passwordCatergories.at(Math.floor(Math.random()*passwordCatergories.length));
+    console.log(passwordCatergory);
+    var position = Math.floor(Math.random()*passwordCatergories.length);
+    password += passwordCatergory.charAt(position);
+  }
+  reset();
+  return password;
 }
 
 // Get references to the #generate element
