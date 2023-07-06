@@ -1,2 +1,1 @@
-# Password_Generator
-Password Generator creates passwords with given prompts.
+# Password Generator Starter Code
